@@ -1,0 +1,19 @@
+{
+  "name": "autopartes-reportes",
+  "version": "1.0.0",
+  "description": "Backend Autopartes - Servicios de Reportería (SAP HANA)",
+  "main": "app.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development && node app.js",
+    "start": "set NODE_ENV=production && node app.js",
+    "start:dev": "set NODE_ENV=development && node app.js",
+    "start:prod": "set NODE_ENV=production && node app.js"
+  },
+  "dependencies": {
+    "@sap/hana-client": "^2.25.29",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.2.1",
+    "pm2": "^6.0.14"
+  }
+}
