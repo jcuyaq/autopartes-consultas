@@ -2,7 +2,7 @@
 const hana = require('@sap/hana-client');
 
 const connParams = {
-  serverNode: `${process.env.HANA_HOST || '192.168.10.11'}:${process.env.HANA_PORT || '30015'}`,
+  serverNode: `${process.env.HANA_HOST}:${process.env.HANA_PORT}`,
   uid:        process.env.HANA_USER     || 'B1ADMIN',
   pwd:        process.env.HANA_PASSWORD || 'S0p0rt3*',
 };

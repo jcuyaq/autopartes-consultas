@@ -5,33 +5,70 @@
   },
   "variable": [
     {
-      "key": "base_url",
-      "value": "http://192.168.10.76:9010",
+      "key": "base_url_dev",
+      "value": "http://192.168.10.11:9010",
+      "type": "string"
+    },
+    {
+      "key": "base_url_prod",
+      "value": "http://191.98.146.64:8010",
       "type": "string"
     }
   ],
   "item": [
     {
-      "name": "Health Check",
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "{{base_url}}/api/health",
-          "host": ["{{base_url}}"],
-          "path": ["api", "health"]
+      "name": "DEV",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url_dev}}/api/health",
+              "host": ["{{base_url_dev}}"],
+              "path": ["api", "health"]
+            }
+          }
+        },
+        {
+          "name": "Cuentas por Cobrar",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url_dev}}/api/cuentas-por-cobrar",
+              "host": ["{{base_url_dev}}"],
+              "path": ["api", "cuentas-por-cobrar"]
+            }
+          }
         }
-      }
+      ]
     },
     {
-      "name": "Cuentas por Cobrar",
-      "request": {
-        "method": "GET",
-        "url": {
-          "raw": "{{base_url}}/api/cuentas-por-cobrar",
-          "host": ["{{base_url}}"],
-          "path": ["api", "cuentas-por-cobrar"]
+      "name": "PROD",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url_prod}}/api/health",
+              "host": ["{{base_url_prod}}"],
+              "path": ["api", "health"]
+            }
+          }
+        },
+        {
+          "name": "Cuentas por Cobrar",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url_prod}}/api/cuentas-por-cobrar",
+              "host": ["{{base_url_prod}}"],
+              "path": ["api", "cuentas-por-cobrar"]
+            }
+          }
         }
-      }
+      ]
     }
   ]
 }
